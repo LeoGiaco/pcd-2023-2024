@@ -1,5 +1,5 @@
 package pcd.lab03.liveness.accounts_exercise;
 
-class InsufficientBalanceException extends Exception {
+public class InsufficientBalanceException extends Exception {
 }
 

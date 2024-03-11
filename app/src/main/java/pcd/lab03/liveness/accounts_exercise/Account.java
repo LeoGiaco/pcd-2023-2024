@@ -1,6 +1,6 @@
 package pcd.lab03.liveness.accounts_exercise;
 
-class Account {
+public class Account {
 
 	private int balance;
 	
