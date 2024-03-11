@@ -16,11 +16,11 @@ public class SequentialSort {
 
 		long t0 = System.nanoTime();
 
-		int nThreads = 8;
+		int nThreads = 17;
 		List<Thread> threads = new ArrayList<>(nThreads);
 		for (int i = 0; i < nThreads; i++) {
 			int finalI = i;
-			Thread t = new Thread(() -> Arrays.sort(v, finalI * v.length / nThreads, (finalI + 1) * v.length / nThreads));
+			Thread t = new Thread(() -> Arrays.sort(v, finalI * (v.length / nThreads), (finalI + 1) * (v.length / nThreads)));
 			threads.add(t);
 			t.start();
 		}
