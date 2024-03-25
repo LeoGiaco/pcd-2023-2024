@@ -77,12 +77,12 @@ public class MandelbrotSet {
 	
 	private double computeColor(double x0, double y0, int maxIteration){
 		int iteration = 0;		
-		double x = x0;
-		double y = y0;
+		double x = Math.abs(x0);
+		double y = Math.abs(y0);
 		while ( x*x + y*y <= 4 &&  iteration < maxIteration ){
 		    double xtemp = x*x - y*y + x0;
-		    y = 2*x*y + y0;
-		    x = xtemp;
+		    y = Math.abs(2*x*y - y0);
+		    x = Math.abs(xtemp);
 		    iteration++;
 		  }		 
 		  if ( iteration == maxIteration ){
