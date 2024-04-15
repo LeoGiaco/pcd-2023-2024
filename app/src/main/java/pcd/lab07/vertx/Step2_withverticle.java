@@ -13,7 +13,7 @@ class MyReactiveAgent extends AbstractVerticle {
 		
 		FileSystem fs = getVertx().fileSystem();    		
 		
-		Future<Buffer> f1 = fs.readFile("build.gradle.kts");
+		Future<Buffer> f1 = fs.readFile("app/build.gradle.kts");
 
 		f1.onComplete((AsyncResult<Buffer> res) -> {
 			log("4 - BUILD \n" + res.result().toString().substring(0,160));
@@ -22,7 +22,7 @@ class MyReactiveAgent extends AbstractVerticle {
 		log("2 - doing the seconf async call...");
 
 		fs
-		.readFile("../settings.gradle.kts")
+		.readFile("settings.gradle.kts")
 		.onComplete((AsyncResult<Buffer> res) -> {
 			log("4 - SETTINGS \n" + res.result().toString().substring(0,160));
 		});
